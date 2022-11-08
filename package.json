@@ -2,6 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dixrom.github.io/blog/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
     "@tailwindcss/forms": "^0.5.3",
@@ -29,6 +30,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
