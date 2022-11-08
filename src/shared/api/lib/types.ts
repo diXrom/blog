@@ -25,7 +25,7 @@ interface IComment {
   id: string;
   name: string;
   comment: string;
-  avatarUrl?: string;
+  imageUrl?: string;
   created: string;
 }
 

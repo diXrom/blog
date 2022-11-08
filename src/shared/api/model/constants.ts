@@ -3,7 +3,6 @@ const API_URL = 'https://dixrom-blog.herokuapp.com';
 const API_PATH = {
   POST: '/post',
   TAGS: '/tags',
-  COMMENTS: '/comments',
   COMMENT: '/comment',
   USER: '/user',
   UPLOAD: '/upload',
@@ -12,7 +11,7 @@ const API_PATH = {
 };
 
 const TAGS = {
-  DEFAULT: { type: 'Posts', _id: 'LIST' } as const,
+  DEFAULT: { type: 'Posts', id: 'LIST' },
   POSTS: 'Posts',
   POST: 'Post',
   POSTTAGS: 'Tags',

@@ -10,7 +10,7 @@ const prepareHeaders = (headers: Headers) => {
 
 const getProvidesTags = (result: IPost[] | undefined) =>
   result
-    ? [...result.map(({ _id }) => ({ type: TAGS.POSTS, _id } as const)), TAGS.DEFAULT]
+    ? [...result.map(({ _id }) => ({ type: 'Posts' as const, id: _id })), TAGS.DEFAULT]
     : [TAGS.DEFAULT];
 
 export { prepareHeaders, getProvidesTags };

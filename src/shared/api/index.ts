@@ -17,12 +17,16 @@ export const postAPI = createApi({
   tagTypes: [TAGS.POSTS, TAGS.POST, TAGS.POSTTAGS, TAGS.COMMENTS],
   endpoints: (build) => ({
     getComments: build.query<IComment[], void>({
-      query: () => API_PATH.COMMENTS,
+      query: () => API_PATH.COMMENT,
       providesTags: [TAGS.COMMENTS],
     }),
-    getTags: build.query<string[], void>({
-      query: () => API_PATH.TAGS,
-      providesTags: [TAGS.POSTTAGS],
+    getComment: build.query<IComment[], string>({
+      query: (id) => `${API_PATH.COMMENT}/${id}`,
+      providesTags: [TAGS.COMMENTS],
+    }),
+    addComment: build.mutation<IComment, Partial<IComment>>({
+      query: (body) => ({ url: `${API_PATH.COMMENT}`, method: 'POST', body }),
+      invalidatesTags: [TAGS.COMMENTS, TAGS.POSTS],
     }),
     getUser: build.query<IUserResponse, void>({ query: () => API_PATH.USER }),
     signUp: build.mutation<IAuthResponse, IAuthorization>({
@@ -30,6 +34,10 @@ export const postAPI = createApi({
     }),
     signIn: build.mutation<IAuthResponse, Partial<IAuthorization>>({
       query: (body) => ({ url: API_PATH.LOGIN, method: 'POST', body }),
+    }),
+    getTags: build.query<string[], void>({
+      query: () => API_PATH.TAGS,
+      providesTags: [TAGS.POSTTAGS],
     }),
     uploadImage: build.mutation<{ secure_url: string }, FormData>({
       query: (body) => ({ url: API_PATH.UPLOAD, method: 'POST', body }),
@@ -42,10 +50,6 @@ export const postAPI = createApi({
       query: (id) => ({ url: `${API_PATH.POST}/${id}`, method: 'GET' }),
       invalidatesTags: [TAGS.POSTS],
     }),
-    addComment: build.mutation<IComment, Partial<IComment>>({
-      query: (body) => ({ url: `${API_PATH.POST}/${API_PATH.COMMENT}`, method: 'POST', body }),
-      invalidatesTags: [TAGS.POST, TAGS.POSTTAGS],
-    }),
     addPost: build.mutation<IPost, INewPost>({
       query: (body) => ({ url: API_PATH.POST, method: 'POST', body }),
       invalidatesTags: [TAGS.DEFAULT, TAGS.POSTTAGS],
@@ -56,7 +60,7 @@ export const postAPI = createApi({
     }),
     deletePost: build.mutation<{ success: boolean }, string>({
       query: (_id) => ({ url: `${API_PATH.POST}/${_id}`, method: 'DELETE' }),
-      invalidatesTags: (_, __, id) => [{ type: TAGS.POSTS, id }, TAGS.POSTTAGS],
+      invalidatesTags: (_, __, _id) => [{ type: TAGS.POSTS, id: _id }, TAGS.POSTTAGS],
     }),
   }),
 });
@@ -64,14 +68,15 @@ export const postAPI = createApi({
 export const {
   useGetPostsQuery,
   useGetPostMutation,
-  useGetUserQuery,
   useAddPostMutation,
   useUpdatePostMutation,
   useDeletePostMutation,
-  useGetCommentsQuery,
-  useGetTagsQuery,
-  useAddCommentMutation,
   useSignInMutation,
   useSignUpMutation,
+  useGetUserQuery,
+  useGetTagsQuery,
   useUploadImageMutation,
+  useGetCommentsQuery,
+  useGetCommentQuery,
+  useAddCommentMutation,
 } = postAPI;
