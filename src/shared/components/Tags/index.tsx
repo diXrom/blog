@@ -1,16 +1,15 @@
 import { FC, memo } from 'react';
-import Card from 'shared/components/Card';
 import { FaHashtag, FaSync } from 'react-icons/fa';
 import clsx from 'clsx';
+
+import Card from 'shared/components/Card';
 import TagsSkeleton from './ui/TagsSkeleton';
+import tagStyle from './lib/styles';
 
 interface ITags {
   tags: string[];
   setFilter: React.Dispatch<React.SetStateAction<string>>;
 }
-
-const tagStyle =
-  'flex items-center gap-3 px-3 py-2 text-gray-600 transition duration-300 cursor-pointer 0 text-md hover:bg-slate-100 hover:scale-105 active:scale-100';
 
 const Tags: FC<ITags> = ({ tags, setFilter }) => {
   const handleClick = (filter: string) => () => setFilter(filter);
