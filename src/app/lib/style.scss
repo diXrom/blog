@@ -2,23 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.fade-in {
-  animation: fade-in ease 500ms;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
 body{
   @apply bg-slate-100
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.w-md-editor-text-pre > code,
+.w-md-editor-text-input {
+  font-size: 20px !important;
+  line-height: 24px !important;
 }
 
 input:-webkit-autofill,

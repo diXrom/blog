@@ -3,11 +3,11 @@ import { Routes, Route, HashRouter as Router } from 'react-router-dom';
 import MainPage from 'pages/MainPage';
 import FullPost from 'pages/FullPost';
 import NewPost from 'pages/NewPost';
+import Registration from 'pages/Registration';
+import Login from 'pages/Login';
 import Layout from 'widgets/Layout';
 import { ROUTE_PATH } from 'shared/common/constants';
 import 'app/lib/style.scss';
-import Registration from 'pages/Registration';
-import Login from 'pages/Login';
 
 const MainRoutes = () => (
   <Router>
