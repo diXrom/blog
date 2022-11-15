@@ -24,7 +24,7 @@ const Poster: FC<IPoster> = ({ imageUrl, full, post }) => {
         variants={imgAnimation}
         {...motionVariants}
         src={imageUrl}
-        alt="poster"
+        alt=""
         className={clsx('object-cover w-full transition rounded-t-lg', full ? 'h-96' : 'h-64')}
       />
     </Link>
