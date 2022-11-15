@@ -24,7 +24,7 @@ const AddComment: FC<IAddComment> = ({ imageUrl }) => {
     <>
       <div className="flex gap-2 p-3">
         <img
-          src={imageUrl || '/noavatar.png'}
+          src={imageUrl || `${process.env.PUBLIC_URL}/noavatar.png`}
           alt="avatar"
           className="object-cover w-8 h-8 rounded-full"
         />
@@ -37,7 +37,7 @@ const AddComment: FC<IAddComment> = ({ imageUrl }) => {
           placeholder="Написать комментарий..."
         />
       </div>
-      <Button outline className="ml-12" onClick={handleClick}>
+      <Button outline className="ml-[64px] " onClick={handleClick}>
         Отправить
       </Button>
     </>

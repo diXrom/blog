@@ -43,7 +43,7 @@ const Registration = () => {
           <Button disabled={disabled} type="submit" className="w-full !text-base shadow-md h-11">
             Зарегистрироваться
           </Button>
-          <div className="text-gray-500">
+          <div className="text-center text-gray-500">
             Есть аккаунт?
             <Link to="/login" className="ml-2 text-gray-800 hover:underline">
               Войти?

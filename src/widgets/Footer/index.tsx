@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { FaGithub, FaLinkedinIn, FaTelegram } from 'react-icons/fa';
 
 const SocialIcons = [
-  { link: 'https://github.com/', icon: <FaGithub /> },
+  { link: 'https://github.com/diXrom', icon: <FaGithub /> },
   { link: 'https://www.linkedin.com/in/dixrom/', icon: <FaLinkedinIn /> },
   { link: 'https://t.me/dixromat', icon: <FaTelegram /> },
 ];

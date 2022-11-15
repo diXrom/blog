@@ -5,7 +5,7 @@ const useMainPage = () => {
   const [filter, setFilter] = useState('all');
   const [sort, setSort] = useState('popular');
   const { posts, loading } = useGetPostsQuery(undefined, {
-    selectFromResult: ({ data, isLoading, isFetching }) => ({
+    selectFromResult: ({ data, isLoading }) => ({
       posts: data
         ? [...data]
             .filter((post) => post.tags.some((tag) => tag === filter || filter === 'all'))
@@ -14,7 +14,7 @@ const useMainPage = () => {
               return Number(new Date(b.createdAt)) - Number(new Date(a.createdAt));
             })
         : [],
-      loading: isLoading || isFetching,
+      loading: isLoading,
     }),
   });
   const { comments, fetching } = useGetCommentsQuery(undefined, {
@@ -29,7 +29,7 @@ const useMainPage = () => {
   });
   const { tags } = useGetTagsQuery(undefined, {
     selectFromResult: ({ data }) => ({
-      tags: data ? Array.from(new Set(data)) : [],
+      tags: data ? Array.from(new Set(data)).slice(0, 10) : [],
     }),
   });
 

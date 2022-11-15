@@ -36,9 +36,12 @@ const Login = () => {
           <Button type="submit" className="w-full !text-base shadow-md h-11">
             Войти
           </Button>
-          <Link to="/registration" className="block text-gray-800 hover:underline">
-            Регистрация
-          </Link>
+          <div className="text-center text-gray-500">
+            Нет аккаунта?
+            <Link to="/registration" className="ml-2 text-gray-800 hover:underline">
+              Регистрация
+            </Link>
+          </div>
         </form>
       </Card>
     </motion.div>
