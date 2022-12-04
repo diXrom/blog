@@ -1,4 +1,4 @@
-const API_URL = 'https://dixrom-blog.herokuapp.com';
+const API_URL = 'https://blog-backend-production-b8dd.up.railway.app';
 
 const API_PATH = {
   POST: '/post',
