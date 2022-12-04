@@ -14,7 +14,7 @@ It's a full stack Blog application with React, Redux, Node, Express & MongoDB. T
  - Express
  - Mongoose
 
-### Sceenshot
+### Sceenshots
 ![image](https://cdn.discordapp.com/attachments/574907131363590174/1042083480802185246/image.png)
 ![image](https://cdn.discordapp.com/attachments/574907131363590174/1042083698805309440/image.png)
 ![image](https://cdn.discordapp.com/attachments/574907131363590174/1042083856595042324/image.png)
