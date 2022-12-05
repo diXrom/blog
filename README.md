@@ -2,6 +2,7 @@
 It's a full stack Blog application with React, Redux, Node, Express & MongoDB. Try out now on [Blog](https://dixrom.github.io/blog/)
 
 ### Used technologies
+#### Frontend:
  - TypeScript 
  - React 
  - React Router
@@ -10,8 +11,10 @@ It's a full stack Blog application with React, Redux, Node, Express & MongoDB. T
  - RTK Query
  - Tailwind 
  - Framer Motion
+#### Backend:
  - Node
  - Express
+ - MongoDB
  - Mongoose
 
 ### Sceenshots
